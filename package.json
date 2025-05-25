@@ -1,0 +1,33 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Modern and futuristic personal website built with MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "cd frontend && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "build": "cd frontend && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [
+    "portfolio",
+    "mern",
+    "react",
+    "mongodb",
+    "express",
+    "node",
+    "tailwindcss"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "mongodb": "^6.16.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
