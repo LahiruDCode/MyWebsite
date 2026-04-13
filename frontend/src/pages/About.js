@@ -71,7 +71,7 @@ const About = () => {
               </p>
               <p>
               Before joining <b>SLIIT</b>, I completed the DiTEC programme at <b>ESOFT Bambalapitiya</b> and was proud to be the <b>batch top in 2022.</b>
-               I'm now a third year IT undergraduate at <b>SLIIT</b>, moving into my fourth year in July 2026.
+               I'm now a third year SE undergraduate at <b>SLIIT</b>, moving into my fourth year in July 2026.
               Along the way, I’ve explored areas like mobile app and full-stack development, which built a strong foundation in software and systems.
               While RPA is my main focus, these experiences continue to shape my broader tech skills and problem-solving mindset.
               </p>
