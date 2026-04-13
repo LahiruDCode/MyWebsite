@@ -61,7 +61,7 @@ const About = () => {
             <div className="space-y-4 text-gray-700 dark:text-gray-300">
               <p>
               Hello! I'm <b>Lahiru Dilhara</b>, an RPA Developer with a passion for automation and problem-solving.
-              I currently work at <b>Collective RCM</b>, a US-based Revenue Cycle Management company, where I use UiPath to automate repetitive tasks and improve business processes.
+              I currently work at <b>Trigon RCM</b>, a US-based Revenue Cycle Management company, where I use UiPath to automate repetitive tasks and improve business processes.
               </p>
               <p>
               Before joining <b>SLIIT</b>, I completed the DiTec programme at <b>ESOFT Bambalapitiya</b> and was proud to be the <b>batch top in 2022.</b>
