@@ -70,8 +70,8 @@ const About = () => {
               I currently work at <b>Trigon RCM</b>, a US-based Revenue Cycle Management company, where I use UiPath to automate repetitive tasks and improve business processes.
               </p>
               <p>
-              Before joining <b>SLIIT</b>, I completed the DiTec programme at <b>ESOFT Bambalapitiya</b> and was proud to be the <b>batch top in 2022.</b>
-              I'm now a second-year IT undergraduate at <b>SLIIT</b>, moving into my third year in July 2025.
+              Before joining <b>SLIIT</b>, I completed the DiTEC programme at <b>ESOFT Bambalapitiya</b> and was proud to be the <b>batch top in 2022.</b>
+               I'm now a third year IT undergraduate at <b>SLIIT</b>, moving into my fourth year in July 2026.
               Along the way, I’ve explored areas like mobile app and full-stack development, which built a strong foundation in software and systems.
               While RPA is my main focus, these experiences continue to shape my broader tech skills and problem-solving mindset.
               </p>
