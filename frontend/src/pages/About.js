@@ -5,14 +5,20 @@ const About = () => {
   const experiences = [
     {
       title: 'RPA Developer',
+      company: 'Trigon RCM',
+      period: '2026 - Present',
+      description: 'Building automation solutions using UiPath to streamline healthcare revenue cycle processes. Working with APIs to connect different systems and collaborating with the team to improve workflows and reduce manual effort.'
+    },
+    {
+      title: 'RPA Developer',
       company: 'Collective RCM',
-      period: '2024 - Present',
+      period: '2024 - 2026',
       description: 'Developing automation solutions using UiPath to streamline business processes in the healthcare revenue cycle. Working with APIs to integrate external systems and enhance automation workflows, while collaborating with the team to identify and implement process improvements.'
     },
     {
       title: 'Co-Founder',
       company: 'Caelusk Digital Agency',
-      period: '2022 - Present (Holded for now)',
+      period: '2022 - 2025',
       description: 'Co-founded a digital agency focused on delivering social media and web solutions for clients across different industries. Handled project planning, content creation, and client communication before pausing operations due to academic priorities.'
     },
     {
