@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { SunIcon, MoonIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const Header = ({ darkMode, setDarkMode }) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -14,114 +14,131 @@ const Header = ({ darkMode, setDarkMode }) => {
     { name: 'Contact', href: '/contact' },
   ];
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm py-4">
+    <header
+      className="navbar-3d"
+      style={{
+        borderBottomColor: scrolled ? 'rgba(194,164,255,0.18)' : 'rgba(194,164,255,0.08)',
+      }}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            whileHover={{ scale: 1.04 }}
+            className="nav-logo"
           >
             Lahiru Dilhara
           </motion.div>
         </Link>
-        
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className={`transition-colors duration-300 ${
-                location.pathname === item.href
-                  ? 'text-primary dark:text-secondary font-medium'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary'
-              }`}
+              className={`nav-link ${location.pathname === item.href ? 'active' : ''}`}
             >
               {item.name}
             </Link>
           ))}
-          
-          {/* Dark mode toggle */}
-          <button
-            onClick={toggleDarkMode}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
-            aria-label="Toggle dark mode"
+
+          {/* CTA Button */}
+          <a
+            href="mailto:lahirudilhara08@gmail.com"
+            className="btn-3d-primary"
+            style={{ padding: '8px 20px', fontSize: '0.82rem' }}
           >
-            {darkMode ? (
-              <SunIcon className="h-5 w-5 text-yellow-400" />
-            ) : (
-              <MoonIcon className="h-5 w-5 text-gray-600" />
-            )}
-          </button>
+            Hire Me
+          </a>
         </nav>
-        
+
         {/* Mobile menu button */}
         <div className="flex items-center md:hidden">
           <button
-            onClick={toggleDarkMode}
-            className="p-2 mr-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
-            aria-label="Toggle dark mode"
-          >
-            {darkMode ? (
-              <SunIcon className="h-5 w-5 text-yellow-400" />
-            ) : (
-              <MoonIcon className="h-5 w-5 text-gray-600" />
-            )}
-          </button>
-          
-          <button
-            onClick={toggleMenu}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 rounded-md"
             aria-label="Toggle menu"
+            style={{ color: 'var(--text-muted)' }}
           >
-            {isMenuOpen ? (
-              <XIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-            ) : (
-              <MenuIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-            )}
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              {isMenuOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="7" x2="21" y2="7" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="17" x2="21" y2="17" />
+                </>
+              )}
+            </svg>
           </button>
         </div>
       </div>
-      
+
       {/* Mobile menu */}
-      {isMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden border-t border-gray-200 dark:border-gray-700 mt-2"
-        >
-          <div className="container mx-auto px-4 py-2">
-            <nav className="flex flex-col space-y-4 py-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`px-4 py-2 rounded-md transition-colors duration-300 ${
-                    location.pathname === item.href
-                      ? 'bg-gray-100 dark:bg-gray-700 text-primary dark:text-secondary font-medium'
-                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            style={{
+              borderTop: '1px solid rgba(194,164,255,0.1)',
+              background: 'rgba(11,8,12,0.95)',
+              backdropFilter: 'blur(14px)',
+            }}
+          >
+            <div className="container mx-auto px-4 py-4">
+              <nav className="flex flex-col space-y-2">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`nav-link px-3 py-3 rounded-md ${location.pathname === item.href ? 'active' : ''}`}
+                    style={{
+                      background: location.pathname === item.href ? 'rgba(194,164,255,0.08)' : 'transparent',
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <a
+                  href="mailto:lahirudilhara08@gmail.com"
+                  className="btn-3d-primary mt-2"
+                  style={{ textAlign: 'center' }}
                 >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </motion.div>
-      )}
+                  Hire Me
+                </a>
+              </nav>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

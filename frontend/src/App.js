@@ -4,10 +4,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// 3D Design System
+import './components/styles/3d-portfolio.css';
+
 // Component imports
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import GlowOrbs from './components/GlowOrbs';
+import CustomCursor from './components/CustomCursor';
 
 // Page imports
 import Home from './pages/Home';
@@ -20,26 +25,32 @@ import Contact from './pages/Contact';
 import AdminRoutes from './AdminRoutes';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Always force dark class for 3D design
   useEffect(() => {
-    // Check user preference for dark mode
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(prefersDark);
+    document.documentElement.classList.add('dark');
+    document.body.classList.add('portfolio-3d');
+    return () => {
+      document.body.classList.remove('portfolio-3d');
+    };
   }, []);
 
   return (
     <Router>
+      {/* Global 3D visual elements */}
+      <GlowOrbs />
+      <CustomCursor />
+
       <AnimatePresence>
         {loading && <Loader setLoading={setLoading} />}
       </AnimatePresence>
-      
-      <div className={`min-h-screen flex flex-col ${darkMode ? 'dark bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
+
+      <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#0b080c', color: '#eae5ec' }}>
         {!loading && (
           <>
-            <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-            <motion.main 
+            <Header />
+            <motion.main
               className="flex-grow container mx-auto px-4 py-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,7 +69,19 @@ function App() {
           </>
         )}
       </div>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </Router>
   );
 }
