@@ -66,17 +66,17 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-gray-700 dark:text-gray-300">
               <p>
-              Hello! I'm <b>Lahiru Dilhara</b>, an RPA Developer with a passion for automation and problem-solving.
-              I currently work at <b>Trigon RCM</b>, a US-based Revenue Cycle Management company, where I use UiPath to automate repetitive tasks and improve business processes.
+                Hello! I'm <b>Lahiru Dilhara</b>, an RPA Developer with a passion for automation and problem-solving.
+                I currently work at <b>Trigon RCM</b>, a US-based Revenue Cycle Management company, where I use UiPath to automate repetitive tasks and improve business processes.
               </p>
               <p>
-              Before joining <b>SLIIT</b>, I completed the DiTEC programme at <b>ESOFT Bambalapitiya</b> and was proud to be the <b>batch top in 2022.</b>
-               I'm now a third year SE undergraduate at <b>SLIIT</b>, moving into my fourth year in July 2026.
-              Along the way, I’ve explored areas like mobile app and full-stack development, which built a strong foundation in software and systems.
-              While RPA is my main focus, these experiences continue to shape my broader tech skills and problem-solving mindset.
+                Before joining <b>SLIIT</b>, I completed the DiTEC programme at <b>ESOFT</b> and was proud to be the <b>batch top in 2022.</b>
+                I'm now a fourth year SE undergraduate at <b>SLIIT</b>, having joined in 2023.
+                Along the way, I’ve explored areas like mobile app and full-stack development, which built a strong foundation in software and systems.
+                While RPA is my main focus, these experiences continue to shape my broader tech skills and problem-solving mindset.
               </p>
               <p>
-              When I'm not working or studying, you'll probably find me reading tech blogs, trying out new tools, or just relaxing with something non-tech for balance.
+                When I'm not working or studying, you'll probably find me reading tech blogs, trying out new tools, or just relaxing with something non-tech for balance.
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ const About = () => {
           </h2>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="card"
                 initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,7 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {education.map((edu, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="card"
                 initial={{ opacity: 0, y: 20 }}
