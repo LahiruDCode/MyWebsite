@@ -54,14 +54,6 @@ const Header = () => {
             </Link>
           ))}
 
-          {/* CTA Button */}
-          <a
-            href="mailto:lahirudilhara08@gmail.com"
-            className="btn-3d-primary"
-            style={{ padding: '8px 20px', fontSize: '0.82rem' }}
-          >
-            Hire Me
-          </a>
         </nav>
 
         {/* Mobile menu button */}
@@ -127,13 +119,6 @@ const Header = () => {
                     {item.name}
                   </Link>
                 ))}
-                <a
-                  href="mailto:lahirudilhara08@gmail.com"
-                  className="btn-3d-primary mt-2"
-                  style={{ textAlign: 'center' }}
-                >
-                  Hire Me
-                </a>
               </nav>
             </div>
           </motion.div>
