@@ -5,9 +5,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: 'GitHub',   url: 'https://github.com/LahiruDCode/' },
+    { name: 'GitHub', url: 'https://github.com/LahiruDCode/' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/lahiru-dilhara-10365227b/' },
-    { name: 'Twitter',  url: 'https://twitter.com/Lahiruu01' },
+    { name: 'Twitter', url: 'https://twitter.com/Lahiruu01' },
   ];
 
   return (
@@ -31,7 +31,7 @@ const Footer = () => {
               Lahiru Dilhara
             </Link>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.78rem', marginTop: '4px' }}>
-              © {currentYear} — All rights reserved.
+              © {currentYear} - All rights reserved.
             </p>
           </div>
 

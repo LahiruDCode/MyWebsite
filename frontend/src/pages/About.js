@@ -95,7 +95,7 @@ const About = () => {
           <div>
             <p>
               Hello! I'm <b>Lahiru Dilhara</b>, an RPA Developer with a passion for automation and problem-solving.
-              I currently work at <b>Trigon RCM</b>, a US-based Revenue Cycle Management company, where I use UiPath to automate repetitive tasks and improve business processes.
+              I currently work at <a href="https://trigonrcm.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px', fontWeight: 600 }}>Trigon RCM</a>, a US-based Revenue Cycle Management company, where I use UiPath to automate repetitive tasks and improve business processes.
             </p>
             <p>
               Before joining <b>SLIIT</b>, I completed the DiTEC programme at <b>ESOFT</b> and was proud to be the <b>batch top in 2022.</b>
