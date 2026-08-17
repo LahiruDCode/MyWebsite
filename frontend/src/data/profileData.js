@@ -5,7 +5,7 @@ export const profileData = {
   bio: 'Passionate Automation Developer with Expertise in UiPath',
   location: 'Colombo, Sri Lanka',
   email: 'lahirudilhara08@gmail.com',
-  phone: '+9477XXXXXXX',
+  phone: '+9477XXX3XXX',
   github: 'https://github.com/LahiruDCode',
   linkedin: 'https://www.linkedin.com/in/lahiru-dilhara-10365227b/',
   twitter: 'https://x.com/Lahiruu01',
